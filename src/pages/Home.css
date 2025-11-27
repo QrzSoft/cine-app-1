@@ -1,0 +1,28 @@
+.home { padding: 20px; }
+
+.controls { 
+    display: flex; 
+    gap: 10px; 
+    margin-bottom: 20px; 
+    flex-wrap: wrap; }
+
+.search-bar { 
+    width: 100%; 
+    max-width: 400px; 
+    padding: 8px; 
+    font-size: 1em; }
+
+.movies-grid { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 10px; }
+
+.pagination { 
+    margin-top: 20px; 
+    display: flex; 
+    justify-content: center; 
+    gap: 10px; }
+
+.loading { 
+    font-size: 1.2rem; 
+    text-align: center; }
