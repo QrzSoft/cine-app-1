@@ -1,18 +1,25 @@
-import {useState, useEffect, use} from 'react';
+// src/hooks/useLocalStorage.js
+import { useState, useEffect } from "react";
 
 export const useLocalStorage = (key, initialValue) => {
-    const [value, setValue] = useState(() => {
-        try {
-            const item = localStorage.getItem(key);
-            return item ? JSON.parse(item) : initialValue;
-        } catch (error) {
-            return initialValue;
-        }
-    });
+  const [value, setValue] = useState(() => {
+    try {
+      const item = window.localStorage.getItem(key);
+      return item ? JSON.parse(item) : initialValue;
+    } catch (error) {
+      return initialValue;
+    }
+  });
 
-    useEffect(() => {
-        window.localStorage.setItem(key, JSON.stringify(value));
-    }, [key, value]);
+  useEffect(() => {
+    try {
+      window.localStorage.setItem(key, JSON.stringify(value));
+    } catch (error) {
+      // silencioso si falla
+    }
+  }, [key, value]);
 
-    return [value, setValue];
+  return [value, setValue];
 };
+
+export default useLocalStorage;

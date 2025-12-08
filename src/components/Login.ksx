@@ -1,0 +1,16 @@
+import { signInWithPopup } from "firebase/auth";
+import { auth, provider } from "../services/firebase";
+
+const Login = () => {
+  const handleGoogle = async () => {
+    await signInWithPopup(auth, provider);
+  };
+
+  return (
+    <button onClick={handleGoogle} className="google-btn">
+      Iniciar sesión con Google
+    </button>
+  );
+};
+
+export default Login;
