@@ -22,3 +22,40 @@
   background: #fff; padding: 20px; max-width: 500px;
   border-radius: 8px; overflow-y: auto; max-height: 80vh;
 }
+
+.movie-link {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start; /* alinea poster y texto */
+  text-decoration: none;
+  color: inherit;
+  flex-direction: column;
+}
+
+/* El poster ocupa su espacio y se adapta manteniendo proporción */
+.movie-poster {
+  width: 100%;
+  max-width: 220px; /* ajusta según prefieras */
+  height: auto;
+  object-fit: cover;
+  border-radius: 6px;
+  flex-shrink: 0; /* evita que se encoja demasiado */
+}
+
+/* El área de información toma el espacio restante */
+.movie-info {
+  flex: 1;
+  min-width: 0; /* permite truncar texto dentro del flex */
+}
+
+/* Opcional: mejorar responsive en pantallas pequeñas */
+@media (max-width: 520px) {
+  .movie-link {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .movie-poster {
+    max-width: 100%;
+    width: 100%;
+  }
+}
