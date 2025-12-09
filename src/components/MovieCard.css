@@ -59,3 +59,38 @@
     width: 100%;
   }
 }
+
+@media (max-width: 900px) {
+  /* Dos columnas en tablets pequeños, manteniendo apariencia desktop */
+  .movie-card {
+    width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 600px) {
+  /* Una columna en móviles: tarjetas fluidas y contenido adaptado */
+  .movie-card {
+    width: 100%;
+    margin: 8px 0;
+    box-sizing: border-box;
+  }
+
+  .movie-poster {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .controls {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .comment-form {
+    flex-direction: column;
+  }
+
+  .comment-form input {
+    width: 100%;
+  }
+}
